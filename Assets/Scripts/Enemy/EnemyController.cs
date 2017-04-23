@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour, Damageble {
 
     [SerializeField] private Slider m_HealthSlider;
 

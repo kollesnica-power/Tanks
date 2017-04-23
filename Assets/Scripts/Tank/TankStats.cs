@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TankStats : MonoBehaviour {
+public class TankStats : MonoBehaviour, Damageble {
 
     [SerializeField] private float m_StartHealth = 100f;
     [SerializeField] private float m_Defense = 100f;
