@@ -42,7 +42,8 @@ public class GameManager : MonoBehaviour {
         if (isGameOver && Input.GetKeyDown(KeyCode.Return)) {
 
             //StartAgain();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            Application.LoadLevel(Application.loadedLevel);
 
         }
 
