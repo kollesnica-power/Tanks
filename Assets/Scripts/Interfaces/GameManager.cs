@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -40,7 +41,8 @@ public class GameManager : MonoBehaviour {
         // Waiting for input when game is over
         if (isGameOver && Input.GetKeyDown(KeyCode.Return)) {
 
-            StartAgain();
+            //StartAgain();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 
         }
 
@@ -67,6 +69,8 @@ public class GameManager : MonoBehaviour {
         m_FadeCanvas.gameObject.SetActive(true);
         m_GameOverText.gameObject.SetActive(true);
 
+        //ClearMines();
+
     }
 
     // Fade out scene and hide game over text
@@ -81,6 +85,18 @@ public class GameManager : MonoBehaviour {
 
         // Set zero sore
         m_ScoreText.text = "Score : 0";
+
+    }
+
+    private void ClearMines() {
+
+        GameObject[] mines = GameObject.FindGameObjectsWithTag("Mine");
+
+        foreach (var item in mines) {
+
+            Destroy(item);
+
+        }
 
     }
 
